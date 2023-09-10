@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Background Color Generator - BG CG
+        </title>
+        <link rel="icon" href="./favi.png" type="image/png">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #1c2023;
+            }
+
+            .container-fluid {
+                height: fit-content;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 50px;
+            }
+
+            .btn {
+                border: 0.5px ridge black;
+            }
+
+            .main {
+                font-family: Montserrat;
+            }
+
+            .main h1 {
+                animation: colorcycle infinite 8s linear;
+            }
+
+            #color-box {
+                width: 60%;
+                height: 300px;
+                outline: none;
+                border: none;
+                /* filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.577)); */
+            }
+
+            #color-code {
+                outline: none;
+            }
+
+            #copy {
+                cursor: pointer;
+            }
+
+            .copied {
+                visibility: hidden;
+            }
+
+            @keyframes colorcycle {
+                0% {
+                    color: violet;
+                }
+
+                14% {
+                    color: indigo;
+                }
+
+                28% {
+                    color: blue;
+                }
+
+                42% {
+                    color: green;
+                }
+
+                56% {
+                    color: gold;
+                }
+
+                70% {
+                    color: orange;
+                }
+
+                84% {
+                    color: red;
+                }
+
+                100% {
+                    color: black;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid bg-light mt-5 p-4">
+            <div class="main">
+
+                <h1 style="color: Gray;">Background Color Generator [BG CG]</h1>
+
+                <form class="text-center mt-4">
+                    <input type="color" id="color-box" name="color-box" oninput="codeGenerate()"> <br /> <br />
+                    <label for="color-code">
+                        Color Code : 
+                    </label>
+                    <input type="text" id="color-code" name="color-code" readonly>
+                    <ion-icon name="copy-sharp" id="copy" onclick="Copy()"></ion-icon> 
+                    <span class="copied">
+                        Copied!!
+                    </span>
+                    <br /> <br />
+                    <button type="button" class="btn" id="generate" onclick="randGenerate()">Generate Color</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+    </body>
+
+</html>
+
